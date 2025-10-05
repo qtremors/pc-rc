@@ -1,0 +1,39 @@
+# PC Remote Control Changelog
+
+> **Project:** PC Remote Control  
+> **Version:** 0.0.1  
+> **Last Updated:** 2025-10-05
+
+---
+
+## [0.0.1] - 2025-10-05
+
+### Added
+- Initial project release.
+- Core FastAPI backend for remote PC control.
+- System power controls: Lock, Sleep, Reboot, Shutdown.
+- Media playback controls: Play/Pause, Volume, Track Skip.
+- Remote screenshot utility with real-time preview.
+- Browser launcher utility.
+- Responsive Vanilla JS frontend optimized for mobile.
+
+---
+
+<!-- ## Version Guidelines
+
+| Type | When to bump |
+|------|--------------|
+| **MAJOR** (X.0.0) | Breaking changes, major rewrites |
+| **MINOR** (0.X.0) | New features, non-breaking changes |
+| **PATCH** (0.0.X) | Bug fixes, small improvements |
+
+## Categories
+
+| Category | Description |
+|----------|-------------|
+| **Added** | New features |
+| **Changed** | Changes in existing functionality |
+| **Fixed** | Bug fixes |
+| **Removed** | Removed features |
+| **Security** | Security-related changes |
+| **Deprecated** | Features that will be removed | -->
