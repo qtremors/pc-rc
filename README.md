@@ -53,9 +53,6 @@ Create and activate a virtual environment using uv.
 ```bash
 uv sync
 ``` 
-```bash
-uv add fastapi uvicorn pyautogui mss python-dotenv
-```
 
 ```bash
 uv run main.py
