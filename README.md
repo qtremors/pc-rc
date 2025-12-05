@@ -53,7 +53,13 @@ Create and activate a virtual environment using uv.
 ```bash
 uv sync
 ``` 
+```bash
+uv add fastapi uvicorn pyautogui mss python-dotenv
+```
 
+```bash
+uv run main.py
+```
 ### 4. Create Environment File
 Create a file named `.env` in the root of the project directory with the following content:  
 ```bash
