@@ -1,8 +1,16 @@
 # PC Remote Control Changelog
 
 > **Project:** PC Remote Control  
-> **Version:** 0.0.1  
-> **Last Updated:** 2025-10-05
+> **Version:** 0.0.2  
+> **Last Updated:** 2025-12-05
+
+---
+
+## [0.0.2] - 2025-12-05
+
+### Added
+- Support for `uv` dependency management.
+- Updated setup instructions and project overview.
 
 ---
 

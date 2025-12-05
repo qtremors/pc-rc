@@ -1,20 +1,20 @@
-# 🖥️ PC Remote Control API
+# 🖥️ PC Remote Control
 
 A simple yet powerful web API that runs on your PC, allowing you to control system functions, media playback, and applications directly from your phone's web browser.
 
 ## 🚀 Overview
 
-This project turns your phone into a wireless remote for your computer.  
-It runs a lightweight Python server on your PC that listens for commands sent from a clean, modern web interface on your phone.  
+This tool lets you use your phone as a remote control for your computer. It creates a simple website on your PC that you can open on your phone's browser to:
 
-Perfect for:
-- Controlling media from the couch  
-- Locking your PC from another room  
-- Quickly launching applications  
+* **Media:** Play/Pause, Change Volume, Skip Tracks.
+* **Power:** Shutdown, Reboot, Sleep, or Lock your PC.
+* **Utility:** Open the browser or take a screenshot remotely.
+
+**No app required.** It works on any phone (iPhone or Android) using the web browser.
+
+---
 
 ## ✨ Current Features
-
-The web interface provides a clean, responsive layout with the following controls grouped into logical sections:
 
 ### 🖥️ System Power
 - Lock: Instantly lock your PC's screen  
@@ -31,6 +31,8 @@ The web interface provides a clean, responsive layout with the following control
 - Open Browser: Launches your default web browser  
 - Take Screenshot: Captures your PC's screen and opens it in a new browser tab on your phone  
 
+---
+
 ## 🧠 Technology Stack
 
 - Backend: Python with FastAPI for a fast and efficient API  
@@ -38,88 +40,109 @@ The web interface provides a clean, responsive layout with the following control
 - Screenshot: MSS for fast and cross-platform screen capturing  
 - Frontend: A single, dependency-free HTML file with modern CSS for a responsive UI  
 
-## ⚙️ How to Run
+---
 
-Follow these steps to get the project running on your local network.
 
-### 1. Clone the Repository
+## ⚙️ How to Install & Run
+
+### Step 1: Install Python
+You need Python installed on your computer to run this.
+* **Download Python here:** [python.org/downloads](https://www.python.org/downloads/)
+* **Important during installation:** Check the box that says **"Add Python to PATH"** before clicking Install.
+
+### Step 2: Open a Terminal
+* **Windows:** Press the `Windows Key`, type `cmd`, and press Enter.
+* **Mac/Linux:** Open the `Terminal` app.
+
+### Step 3: Install the "uv" tool
+We use a tool called `uv` to handle all the complex setup automatically. Type this into your terminal and press Enter:
 ```bash
-git clone https://github.com/qtremors/pc-rc
+pip install uv
+````
+
+### Step 4: Get this project
+
+Copy and paste these commands into your terminal one by one:
+
+```bash
+git clone https://github.com/qtremors/pc-rc.git
 cd pc-rc
-``` 
-
-### 2. Set Up Virtual Environment
-Create and activate a virtual environment using uv.  
-```bash
-uv venv
-``` 
-
-Activate it (Windows):  
-```bash
-.venv\Scripts\activate
 ```
 
-Or (macOS/Linux):  
-```bash
-source .venv/bin/activate
-``` 
+_(If you don't have "git" installed, you can just download this project as a ZIP file, extract it, and open your terminal inside that folder instead.)_
 
-### 3. Install Dependencies
-Install the required packages using uv.  
-```bash
-uv pip install -r requirements.txt
-```  
+### Step 5: Setup and Run
 
-### 4. Create Environment File
-Create a file named `.env` in the root of the project directory with the following content:  
-```bash
-HOST=0.0.0.0  
-PORT=8000
-``` 
+Run these two commands to start the remote:
 
-### 5. Run the Server
-Start the application with this command:  
-```python
-python main.py
-```
+1. **Setup the environment (do this once):**
+    
+    ```bash
+    uv sync
+    ```
+    
+    >Note: If you are starting from scratch without a lockfile, add the dependencies:_
 
-The terminal will display the URL to open on your phone’s browser, for example:  
-`http://192.111.1.10:8000` 
+    ```bash
+    uv add fastapi uvicorn pyautogui mss python-dotenv
+    ```
 
-Your phone must be connected to the same Wi-Fi network as your PC.
+2. **Start the server:**
+    
+    ```bash
+    uv run main.py
+    ```
+    
 
-## 🧭 Future Roadmap
+### Step 6: Connect your Phone
 
-This project is the foundation for a more robust and seamless remote control experience.  
-The long-term vision is to evolve it from a simple web server into a polished, always-on application.
+1. Look at the text in your terminal. It will show a URL like:
+    
+    > `http://192.168.1.15:8000`
+    
+2. Make sure your phone is connected to the **same Wi-Fi** as your computer.
+    
+3. Type that URL into your phone's web browser (Chrome, Safari, etc.).
+    
 
-### Phase 1: Background Service
-Convert the Python server into a background service that automatically starts when the PC boots up.  
-This removes the need to manually run python main.py each time.
+You should now see the remote control interface!
 
-### Phase 2: Native Android Application
-Develop a dedicated Android app to replace the web client.  
-It will offer:  
-- Automatic server discovery on the local network  
-- A more fluid, native interface  
-- The ability to save server addresses  
-- Potential for widgets and notifications  
+---
 
-### Phase 3: Zero-Config Remote Access (Tailscale)
-Integrate Tailscale to provide secure and effortless control from anywhere in the world.  
-This creates a private overlay network between your phone and PC, removing the need for port forwarding and enhancing security.
+## 🧭 Roadmap
 
-### Phase 4: Enhanced Security
-Implement a basic authentication layer (API key or simple PIN system) to prevent unauthorized access, even on a trusted local network.
+The vision is to evolve this from a script into a robust service.
 
-### Phase 5: Extensibility
-Add support for custom user-defined commands or scripts that can be triggered from the app.
+- [ ] **Phase 1: Background Service**
+    
+    - Convert to a systemd service (Linux) or Task Scheduler task (Windows) for auto-start on boot.
+        
+- [ ] **Phase 2: Native Android App**
+    
+    - [ ] Auto-discovery of server on local network.
+        
+    - [ ] Widgets for quick access.
+        
+- [ ] **Phase 3: Remote Access (Tailscale)**
+    
+    - Integrate Tailscale for secure control outside the local network.
+        
+- [ ] **Phase 4: Security**
+    
+    - Implement API Key/PIN authentication.
+        
+- [ ] **Phase 5: Extensibility**
+    
+    - Allow users to define custom shell scripts to run via the UI.
 
-## 💡 Inspiration
+---
 
-This project was inspired by the need for a minimalist, privacy-respecting alternative to commercial remote control tools.  
-Everything runs locally — your commands never leave your network.
+## ❓ Troubleshooting
 
-## 🧑‍💻 Author
-
-Made with ❤️ by Tremors
+- **"Command not found"**: This usually means Python wasn't added to your PATH during installation. Reinstall Python and make sure to check the "Add to PATH" box.
+    
+- **Phone won't connect**:
+    
+    - Check that your phone and PC are on the same Wi-Fi network.
+        
+    - Your computer's Firewall might be blocking the connection. Allow Python through your firewall if asked.

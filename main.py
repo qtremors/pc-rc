@@ -16,7 +16,7 @@ load_dotenv()
 # --- Create a directory for screenshots if it doesn't exist ---
 Path("screenshots").mkdir(exist_ok=True)
 
-app = FastAPI(version="0.0.1")
+app = FastAPI(version="0.0.2")
 
 # --- Helper Function to get the local IP address ---
 def get_local_ip():
