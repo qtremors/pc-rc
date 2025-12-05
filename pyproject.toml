@@ -1,0 +1,13 @@
+[project]
+name = "pc-rc"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.123.9",
+    "mss>=10.1.0",
+    "pyautogui>=0.9.54",
+    "python-dotenv>=1.2.1",
+    "uvicorn>=0.38.0",
+]

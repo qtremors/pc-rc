@@ -51,24 +51,8 @@ cd pc-rc
 ### 2. Set Up Virtual Environment
 Create and activate a virtual environment using uv.  
 ```bash
-uv venv
+uv sync
 ``` 
-
-Activate it (Windows):  
-```bash
-.venv\Scripts\activate
-```
-
-Or (macOS/Linux):  
-```bash
-source .venv/bin/activate
-``` 
-
-### 3. Install Dependencies
-Install the required packages using uv.  
-```bash
-uv pip install -r requirements.txt
-```  
 
 ### 4. Create Environment File
 Create a file named `.env` in the root of the project directory with the following content:  
