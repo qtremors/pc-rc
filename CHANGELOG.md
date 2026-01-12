@@ -1,8 +1,15 @@
 # PC Remote Control Changelog
 
 > **Project:** PC Remote Control  
-> **Version:** 0.0.2  
-> **Last Updated:** 2025-12-05
+> **Version:** 0.0.3  
+> **Last Updated:** 2026-01-12
+
+---
+
+## [0.0.3] - 2026-01-12
+
+### Added
+- Standardized project documentation (README, DEVELOPMENT, LICENSE, TASKS).
 
 ---
 
