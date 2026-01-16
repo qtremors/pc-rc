@@ -1,12 +1,12 @@
 # PC Remote Control - Tasks
 
 > **Project:** PC Remote Control  
-> **Version:** 0.0.3  
-> **Last Updated:** 2026-01-12
+> **Version:** 0.0.4  
+> **Last Updated:** 2026-01-16
 
 ---
 
-## ✅ Completed (Through v0.0.3)
+## ✅ Completed (Through v0.0.4)
 
 ### Backend
 - [x] Initial FastAPI server setup.

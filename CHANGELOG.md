@@ -1,8 +1,15 @@
 # PC Remote Control Changelog
 
 > **Project:** PC Remote Control  
-> **Version:** 0.0.3  
-> **Last Updated:** 2026-01-12
+> **Version:** 0.0.4  
+> **Last Updated:** 2026-01-16
+
+---
+
+## [0.0.4] - 2026-01-16
+
+### Changed
+- Updated the Tremors Source License to Version 2.0 and its README reference.
 
 ---
 

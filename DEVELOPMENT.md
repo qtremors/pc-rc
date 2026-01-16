@@ -2,7 +2,7 @@
 
 > Comprehensive documentation for developers working on PC Remote Control.
 
-**Version:** 0.0.3 | **Last Updated:** 2026-01-12
+**Version:** 0.0.4 | **Last Updated:** 2026-01-16
 
 ---
 
