@@ -1,148 +1,118 @@
-# 🖥️ PC Remote Control
+<p align="center">
+  <img src="assets/pcrc-preview.png" alt="PC Remote Control Logo" width="350" style="border-radius: 20px;"/>
+</p>
 
-A simple yet powerful web API that runs on your PC, allowing you to control system functions, media playback, and applications directly from your phone's web browser.
+<h1 align="center"><a href="https://github.com/qtremors/pc-rc">PC Remote Control</a></h1>
 
-## 🚀 Overview
+<p align="center">
+  Turn your smartphone into a powerful universal remote for your PC. Control media playback, manage system power, and view your screen remotely—all from a simple, elegant web interface.
+</p>
 
-This tool lets you use your phone as a remote control for your computer. It creates a simple website on your PC that you can open on your phone's browser to:
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.11+-blue?logo=python" alt="Python">
+  <img src="https://img.shields.io/badge/FastAPI-0.123+-green?logo=fastapi" alt="FastAPI">
+  <img src="https://img.shields.io/badge/License-TSL-red" alt="License">
+</p>
 
-* **Media:** Play/Pause, Change Volume, Skip Tracks.
-* **Power:** Shutdown, Reboot, Sleep, or Lock your PC.
-* **Utility:** Open the browser or take a screenshot remotely.
-
-**No app required.** It works on any phone (iPhone or Android) using the web browser.
-
----
-
-## ✨ Current Features
-
-### 🖥️ System Power
-- Lock: Instantly lock your PC's screen  
-- Sleep: Put your PC into sleep/suspend mode  
-- Reboot: Safely restart your computer (with confirmation)  
-- Shutdown: Power down your computer (with confirmation)  
-
-### 🎵 Media Controls
-- Volume Up / Down / Mute: Control the system volume  
-- Play / Pause: Control media playback in the active application (e.g., Spotify, YouTube)  
-- Previous / Next Track: Skip between tracks in your media player  
-
-### 🛠️ Utilities & Applications
-- Open Browser: Launches your default web browser  
-- Take Screenshot: Captures your PC's screen and opens it in a new browser tab on your phone  
+> [!NOTE]
+> **Personal Project** 🎯 I built this to easily control my media and system power from across the room without needing to install any third-party apps on my phone.
 
 ---
 
-## 🧠 Technology Stack
+## ✨ Features
 
-- Backend: Python with FastAPI for a fast and efficient API  
-- System & Media Control: PyAutoGUI to simulate keyboard presses for universal media control  
-- Screenshot: MSS for fast and cross-platform screen capturing  
-- Frontend: A single, dependency-free HTML file with modern CSS for a responsive UI  
+| Feature | Description |
+|---------|-------------|
+| 🎵 **Media Control** | Play/Pause, Volume Up/Down/Mute, and Track Navigation for any active media player. |
+| ⚡ **System Power** | Remotely Lock, Sleep, Reboot, or Shutdown your workstation. |
+| 📸 **Remote Screenshot** | Capture your PC screen in real-time and view it instantly on your mobile device. |
+| 🌐 **Browser Launcher** | Launch your default web browser on the PC remotely. |
+| 🔌 **Cross-Platform** | Optimized for Windows, with support for macOS and Linux. |
 
 ---
 
-
-## ⚙️ How to Install & Run
-
-### Step 1: Install Python
-You need Python installed on your computer to run this.
-* **Download Python here:** [python.org/downloads](https://www.python.org/downloads/)
-* **Important during installation:** Check the box that says **"Add Python to PATH"** before clicking Install.
-
-### Step 2: Open a Terminal
-* **Windows:** Press the `Windows Key`, type `cmd`, and press Enter.
-* **Mac/Linux:** Open the `Terminal` app.
-
-### Step 3: Install the "uv" tool
-We use a tool called `uv` to handle all the complex setup automatically. Type this into your terminal and press Enter:
-```bash
-pip install uv
-````
-
-### Step 4: Get this project
-
-Copy and paste these commands into your terminal one by one:
+## 🚀 Quick Start
 
 ```bash
+# Clone and navigate
 git clone https://github.com/qtremors/pc-rc.git
 cd pc-rc
+
+# Install dependencies using uv
+uv sync
+
+# Run the project
+uv run main.py
 ```
 
-_(If you don't have "git" installed, you can just download this project as a ZIP file, extract it, and open your terminal inside that folder instead.)_
-
-### Step 5: Setup and Run
-
-Run these two commands to start the remote:
-
-1. **Setup the environment (do this once):**
-    
-    ```bash
-    uv sync
-    ```
-    
-    >Note: If you are starting from scratch without a lockfile, add the dependencies:_
-
-    ```bash
-    uv add fastapi uvicorn pyautogui mss python-dotenv
-    ```
-
-2. **Start the server:**
-    
-    ```bash
-    uv run main.py
-    ```
-    
-
-### Step 6: Connect your Phone
-
-1. Look at the text in your terminal. It will show a URL like:
-    
-    > `http://192.168.1.15:8000`
-    
-2. Make sure your phone is connected to the **same Wi-Fi** as your computer.
-    
-3. Type that URL into your phone's web browser (Chrome, Safari, etc.).
-    
-
-You should now see the remote control interface!
+Visit the URL displayed in your terminal (usually `http://192.168.1.X:8000`) on your phone. Ensure both devices are on the same Wi-Fi network.
 
 ---
 
-## 🧭 Roadmap
+## 🛠️ Tech Stack
 
-The vision is to evolve this from a script into a robust service.
-
-- [ ] **Phase 1: Background Service**
-    
-    - Convert to a systemd service (Linux) or Task Scheduler task (Windows) for auto-start on boot.
-        
-- [ ] **Phase 2: Native Android App**
-    
-    - [ ] Auto-discovery of server on local network.
-        
-    - [ ] Widgets for quick access.
-        
-- [ ] **Phase 3: Remote Access (Tailscale)**
-    
-    - Integrate Tailscale for secure control outside the local network.
-        
-- [ ] **Phase 4: Security**
-    
-    - Implement API Key/PIN authentication.
-        
-- [ ] **Phase 5: Extensibility**
-    
-    - Allow users to define custom shell scripts to run via the UI.
+| Layer | Technology |
+|-------|------------|
+| **Backend** | Python, FastAPI, Uvicorn |
+| **Automation** | PyAutoGUI, MSS |
+| **Frontend** | HTML5, CSS3, Vanilla JavaScript |
+| **Tools** | uv, python-dotenv |
 
 ---
 
-## ❓ Troubleshooting
+## 📁 Project Structure
 
-- **"Command not found"**: This usually means Python wasn't added to your PATH during installation. Reinstall Python and make sure to check the "Add to PATH" box.
-    
-- **Phone won't connect**:
-    
-    - Check that your phone and PC are on the same Wi-Fi network.
-        
-    - Your computer's Firewall might be blocking the connection. Allow Python through your firewall if asked.
+```
+pc-rc/
+├── assets/               # Project images and logo
+├── screenshots/          # Saved remote screenshots
+├── main.py               # Backend API and server logic
+├── index.html            # Frontend remote interface
+├── pyproject.toml        # Dependencies and build config
+├── DEVELOPMENT.md        # Developer documentation
+├── CHANGELOG.md          # Version history
+├── LICENSE.md            # License terms
+└── README.md
+```
+
+---
+
+## 📊 System Resource usage and impact
+
+cpu: Very Low (< 1% idle, spikes briefly during screenshot capture)
+ram: ~40-60 MB (Python environment + FastAPI)
+disk: < 10 MB (Application code, plus any saved screenshots)
+
+---
+
+## 🧪 Testing
+
+```bash
+# Manual testing is recommended for UI and hardware controls
+uv run main.py
+```
+
+---
+
+## 📚 Documentation
+
+| Document | Description |
+|----------|-------------|
+| [DEVELOPMENT.md](DEVELOPMENT.md) | Architecture, setup, and API reference |
+| [CHANGELOG.md](CHANGELOG.md) | Version history and release notes |
+| [LICENSE.md](LICENSE.md) | License terms and attribution |
+| [TASKS.md](TASKS.md) | Project roadmap and tasks |
+
+---
+
+## 📄 License
+
+**Tremors Source License (TSL)** - Source-available license allowing viewing, forking, and derivative works with **mandatory attribution**. Commercial use requires written permission.
+
+See [LICENSE.md](LICENSE.md) for full terms.
+
+---
+
+<p align="center">
+  Made with ❤️ by <a href="https://github.com/qtremors">Tremors</a>
+</p>
