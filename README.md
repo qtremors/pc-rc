@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/pcrc-preview.png" alt="PC Remote Control Logo" width="350" style="border-radius: 20px;"/>
+  <img src="assets/pc-rc.png" alt="PC Remote Control Logo" width="120" style="border-radius: 20px;"/>
 </p>
 
 <h1 align="center"><a href="https://github.com/qtremors/pc-rc">PC Remote Control</a></h1>
